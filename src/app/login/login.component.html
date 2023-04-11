@@ -1,0 +1,42 @@
+
+<div class="mainPage">
+  <div class="loginForm">
+      <form class="px-3">
+          <div class="mb-4">
+              <h4 class="text-center">Login</h4>
+          </div>
+
+          <div  *ngIf="this.errormsg!=''" class ="px-2 text-center">
+            <small class="redTextError">{{this.errormsg}} </small>
+          </div>
+
+          <div class="form-group">
+              <label for="gsg">User Id</label>
+            <input type="text" class="form-control"   (keyup)="onInputChange()"   [ngClass]="this.userIdError!=''? 'redBorder':''"  [(ngModel)]="userId"
+             id="exampleInputEmail1" aria-describedby="emailHelp" [ngModelOptions]="{standalone: true}" >
+
+             <div *ngIf="this.userIdError!=''" class ="px-2">
+              <small class="redTextError">{{this.userIdError}} </small>
+            </div>
+
+          </div>
+          <div class="form-group">
+              <label for="gsg">Password</label>
+            <input type="password" class="form-control" (keyup)="onInputChange()"   [ngClass]="this.passwordError!=''? 'redBorder':''"  [(ngModel)]="password" id="exampleInputPassword1" [ngModelOptions]="{standalone: true}" >
+
+            <div *ngIf="this.passwordError!=''" class ="px-2">
+              <small class="redTextError">{{this.passwordError}} </small>
+            </div>
+
+          </div>
+          <button type="submit" class="btn btn-block btn-primary mt-4" (click)="login()" >Login</button>
+      </form>
+  </div>
+</div>
+
+
+
+
+
+
+

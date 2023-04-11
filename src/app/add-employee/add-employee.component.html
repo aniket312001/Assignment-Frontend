@@ -1,0 +1,74 @@
+
+<div class="mainPage">
+  <div class="loginForm">
+      <form>
+          <div class="mb-4">
+              <h4 class="text-center">Add Employee</h4>
+          </div>
+          <div class="form-group" *ngIf="id">
+              <label for="gsg">Employee No.</label>
+              <input disabled [(ngModel)]="this.EmployeeId" type="text" class="form-control" id="gsg"  aria-describedby="emailHelp" [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="waf">Employee First Name</label>
+              <input [(ngModel)]="this.firstName"  type="text" class="form-control" id="waf" [ngModelOptions]="{standalone: true}" (keyup)="onInputChange()"   [ngClass]="this.firstNameError!=''? 'redBorder':''"  >
+
+              <div *ngIf="this.firstNameError!=''" class ="px-2">
+                <small class="redTextError">{{this.firstNameError}} </small>
+              </div>
+
+            </div>
+            <div class="form-group  col-md-6">
+              <label for="exampleInputEmail1">Employee last Name</label>
+              <input [(ngModel)]="this.lastName"  type="text" class="form-control" id="3rawt" [ngModelOptions]="{standalone: true}"  (keyup)="onInputChange()"   [ngClass]="this.lastNameError!=''? 'redBorder':''"  >
+
+              <div *ngIf="this.lastNameError!=''" class ="px-2">
+                <small class="redTextError">{{this.lastNameError}} </small>
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="example3Pas3sword1">Designation</label>
+              <input [(ngModel)]="this.Designation"  type="text" class="form-control" id="example3Pas3sword1" [ngModelOptions]="{standalone: true}" (keyup)="onInputChange()"   [ngClass]="this.DesignationError!=''? 'redBorder':''"  >
+
+              <div *ngIf="this.DesignationError!=''" class ="px-2">
+                <small class="redTextError">{{this.DesignationError}} </small>
+              </div>
+
+          </div>
+          <div class="form-group">
+              <label for="exampleInpu3sword1">Date of Joining</label>
+              <input [(ngModel)]="this.DateOfJoining"  type="date" class="form-control" id="exampleInpu3sword1" [ngModelOptions]="{standalone: true}" (keyup)="onInputChange()"   [ngClass]="this.DateOfJoiningError!=''? 'redBorder':''"  >
+
+              <div *ngIf="this.DateOfJoiningError!=''" class ="px-2">
+                <small class="redTextError">{{this.DateOfJoiningError}} </small>
+              </div>
+
+
+          </div>
+          <div class="form-group">
+              <label for="example3">Salary</label>
+              <input [(ngModel)]="this.Salary"  type="number" class="form-control" id="example3" [ngModelOptions]="{standalone: true}" (keyup)="onInputChange()"   [ngClass]="this.SalaryError!=''? 'redBorder':''"  >
+
+              <div *ngIf="this.SalaryError!=''" class ="px-2">
+                <small class="redTextError">{{this.SalaryError}} </small>
+              </div>
+
+
+            </div>
+
+          <div class="btnGrp">
+              <div class="btnDiv">
+                  <button *ngIf="!id" (click)="createEmployee()" type="submit" class="btn btn-block btn-primary mt-4 " routerLink="/employeeList">Save</button>
+                  <button *ngIf="id" (click)="updateEmployee()" type="submit" class="btn btn-block btn-primary mt-4 " routerLink="/employeeList">Update</button>
+              </div>
+              <div class="btnDiv">
+                  <button type="submit" class="btn btn-block btn-secondary  mt-4 " routerLink="/employeeList" >Cancel</button>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>

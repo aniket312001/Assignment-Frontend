@@ -1,0 +1,26 @@
+@media screen and (max-width: 900px) {
+
+    .loginForm {
+        width: 80%;
+    }
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    .headingGrp h3{
+        font-size: large;
+    }
+
+
+    .SearchBx{
+      display: none;
+    }
+
+}
